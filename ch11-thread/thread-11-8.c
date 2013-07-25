@@ -23,7 +23,7 @@ queue_init(struct queue *qp)
 	int err;
 	qp->q_head = NULL;
 	qp->q_tail = NULL;
-	err = pthread_rwlock_init(*qp->q_lock, NULL);
+	err = pthread_rwlock_init(&qp->q_lock, NULL);
 	if (err != 0)
 		return (err);
 

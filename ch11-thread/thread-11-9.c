@@ -1,7 +1,7 @@
 #include <pthread.h>
 
 struct msg {
-	struct msg *m_netx;
+	struct msg *m_next;
 	/* add more stuff here */
 };
 
@@ -31,7 +31,7 @@ enqueue_msg(struct msg *mp)
 	mp->m_next = workq;
 	workq = mp;
 	pthread_mutex_unlock(&qlock);
-	pthread_cond_signal(&qread);
+	pthread_cond_signal(&qready);
 }
 
 int 

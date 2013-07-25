@@ -1,0 +1,11 @@
+# "make" is executed in all the subdirectories of this directory
+
+CC = gcc
+CFLAGS  = -I./ -g -o2 -D_REENTRANT -Wall
+LIBS =
+
+LIBUNP_NAME = 
+
+LIB_OBJS = 
+
+CLEANFILES = *.o *.a tags
